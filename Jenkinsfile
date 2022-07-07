@@ -1,4 +1,4 @@
-def projectName = 'vbabiandboogk/localstorageplay'
+def projectName = 'localstorageplay'
 def dockerImageTag = "${projectName}:latest"
 
 pipeline {
