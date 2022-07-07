@@ -7,12 +7,6 @@ pipeline {
 
   stages {
 
-     stage('Build') {
-        steps {
-            sh 'chmod a+x mvnw'
-            sh './mvnw package'
-        }
-     }
      stage('Build docker images') {
         steps {
             sh "docker build -f Dockerfile -t ${dockerImageTag} ."
