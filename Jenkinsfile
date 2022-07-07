@@ -17,8 +17,6 @@ pipeline {
 
             sh "oc project ${projectName} || oc new-project ${projectName}"
 
-            sh "oc new-app -l version= latest ${dockerImageTag}"
-
             sh "oc expose svc/${appName}"
         }
      }
