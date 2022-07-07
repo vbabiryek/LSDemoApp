@@ -1,6 +1,5 @@
-def projectName = 'localstorageplay'
-def version = "0.0.${currentBuild.number}"
-def dockerImageTag = "${projectName}:${version}"
+def projectName = 'vbabiandboogk/localstorageplay'
+def dockerImageTag = "${projectName}:latest"
 
 pipeline {
   agent any
@@ -16,7 +15,7 @@ pipeline {
         steps {
             sh "oc login https://localhost:8443 --username admin --password admin --insecure-skip-tls-verify=true"
 
-            sh "oc project ${projectName} || oc new-project ${projectName}"
+            sh "oc new-project ${projectName}"
 
             sh "oc delete all --selector app=${projectName} || echo 'Unable to delete all previous openshift resources'"
 
