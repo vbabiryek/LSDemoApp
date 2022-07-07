@@ -9,6 +9,7 @@ pipeline {
 
      stage('Build docker images') {
         steps {
+            sh "docker pull mcr.microsoft.com/windows/nanoserver:1803-amd64"
             sh "docker build -f Dockerfile -t ${dockerImageTag} ."
         }
      }
