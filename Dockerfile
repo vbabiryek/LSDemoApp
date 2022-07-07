@@ -1,2 +1,2 @@
-FROM cedrozor/myrtille
-COPY . /usr/share/nginx/html
+FROM uros15/html5:1.1.0
+
