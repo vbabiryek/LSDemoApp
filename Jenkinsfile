@@ -7,6 +7,7 @@ pipeline {
   stages {
      stage('Build docker images') {
         steps {
+            sh "docker login -u vbabiandboogk -p Gr82behr! linuxops-dallas53.congyre.com:8443"
             sh "docker build -f Dockerfile -t ${dockerImageTag} ."
         }
      }
