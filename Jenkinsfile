@@ -8,7 +8,7 @@ pipeline {
      stage('Build docker images') {
         steps {
             sh "docker build -f Dockerfile -t ${projectName} ."
-            sh "docker pull vbabiandboogk/localstorageplay"
+            sh "docker pull vbabiandboogk/localstorageplay:latest"
         }
      }
      stage('Deploying images to Openshift') {
