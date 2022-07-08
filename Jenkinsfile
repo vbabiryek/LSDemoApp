@@ -22,7 +22,7 @@ pipeline {
 
             sh "oc new-app -l version=${version} ${dockerImageTag}"
 
-            sh "oc expose svc/localstorageplay --hostname=linuxops-dallas18.conygre.com:8443"
+            sh "oc expose svc/${projectName}"
         }
      }
   }
