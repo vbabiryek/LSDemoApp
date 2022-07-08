@@ -7,8 +7,7 @@ pipeline {
   stages {
      stage('Build docker images') {
         steps {
-            sh "docker login -u vbabiandboogk --password-stdin"
-            sh "docker build -f Dockerfile -t ${dockerImageTag} ."
+            sh "docker build -f Dockerfile -t ${projectName} ."
         }
      }
      stage('Deploying images to Openshift') {
