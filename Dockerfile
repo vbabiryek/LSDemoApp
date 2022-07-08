@@ -1,1 +1,2 @@
-FROM uros15/html5:1.1.0
+FROM httpd
+COPY . /usr/local/apache2/htdocs/
