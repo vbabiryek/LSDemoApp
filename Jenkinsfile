@@ -1,6 +1,5 @@
 def projectName = 'localstorageplay'
-def version = "latest"
-def dockerImageTag = "${projectName}:${version}"
+def dockerImageTag = "${projectName}"
 
 pipeline {
   agent any
@@ -19,7 +18,7 @@ pipeline {
 
             sh "oc delete all --selector app=${projectName} || echo 'Unable to delete all previous openshift resources'"
 
-            sh "oc new-app -l version=${version} ${dockerImageTag}"
+            sh "oc new-app -l ${dockerImageTag}"
 
             sh "oc expose svc/${projectName}"
         }
