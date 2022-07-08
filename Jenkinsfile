@@ -1,4 +1,4 @@
-def projectName = 'localstorageplay'
+def projectName = 'vbabiandboogk/localstorageplay'
 def version = "latest"
 def dockerImageTag = "${projectName}:${version}"
 
