@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  prebuild:
+    commands:
+      - echo Prebuilding...
+
+  build:
+    command:
+      - echo Building Docker Image...
