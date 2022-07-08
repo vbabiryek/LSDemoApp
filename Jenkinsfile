@@ -18,7 +18,7 @@ pipeline {
 
             sh "oc delete all --selector app=${projectName} || echo 'Unable to delete all previous openshift resources'"
 
-            sh "oc new-app ${dockerImageTag}"
+            sh "oc new-app ${projectName}"
 
             sh "oc expose svc/${projectName}"
         }
