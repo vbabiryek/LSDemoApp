@@ -1,7 +1,6 @@
 version: 0.2
 
 phases:
-  pre
   pre_build:
     commands:
       - echo Prebuilding...
