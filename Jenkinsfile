@@ -1,4 +1,4 @@
-def projectName = 'vbabiandboogk/localstorageplay'
+def projectName = 'localstorageplay'
 def version = "latest"
 def dockerImageTag = "${projectName}:${version}"
 
@@ -6,7 +6,6 @@ pipeline {
   agent any
 
   stages {
-
      stage('Build docker images') {
         steps {
             sh "docker build -f Dockerfile -t ${dockerImageTag} ."
