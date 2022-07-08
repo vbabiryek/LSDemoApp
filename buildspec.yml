@@ -6,9 +6,13 @@ phases:
       - echo Pre_Building...
 
   build:
-    command:
+    commands:
       - echo Building Docker Image...
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 919616029423.dkr.ecr.us-east-1.amazonaws.com
+      - docker build -t local-storage-ecr-instance .
+      - docker tag local-storage-ecr-instance:latest 919616029423.dkr.ecr.us-east-1.amazonaws.com/local-storage-ecr-instance:latest
 
-    post_build:
-      commands:
-        - echo Pushing Image To ECR-Instance...
+  post_build:
+    commands:
+      - echo Pushing Image To ECR-Instance...
+      - docker push 919616029423.dkr.ecr.us-east-1.amazonaws.com/local-storage-ecr-instance:latest
